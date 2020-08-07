@@ -31,7 +31,7 @@ public class CoinController
         return tempList;
     }
 
-    // http://localhost:2019/population/total
+    // http://localhost:2019/total
     @GetMapping(value = "/total", produces = {"application/json"})
     public ResponseEntity<?> totalValue()
     {
