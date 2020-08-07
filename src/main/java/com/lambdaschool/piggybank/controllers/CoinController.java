@@ -37,20 +37,19 @@ public class CoinController
     {
         List<Coin> myList = new ArrayList<>();
         corepos.findAll().iterator().forEachRemaining(myList::add);
-        System.out.println(myList);
+
         double totalValue = 0;
         for (Coin c : myList)
         {
             if(c.getQuantity()>1)
             {
                 System.out.println(c.getQuantity() + " " + c.getNameplural());
-            }else
-            {
+            }else{
                 System.out.println(c.getQuantity() + " " + c.getName());
             }
             totalValue += c.getValue()*c.getQuantity();
         }
         System.out.println("The piggy bank holds " + totalValue);
-        return new ResponseEntity<>(totalValue, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 }
